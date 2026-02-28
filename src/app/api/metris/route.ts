@@ -1,0 +1,12 @@
+import { NextRequest, NextResponse } from "next/server";
+import { getFactoryMetrics } from "@/lib/metris";
+
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url);
+  const start = searchParams.get("start") || "2026-01-01";
+  const end = searchParams.get("end") || "2026-12-31";
+
+  const metrics = await getFactoryMetrics(start, end);
+
+  return NextResponse.json(metrics);
+}
