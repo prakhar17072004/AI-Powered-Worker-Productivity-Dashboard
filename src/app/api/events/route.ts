@@ -1,16 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import  pool  from "@/lib/db";
+import { getMetrics } from "@/lib/metris";
 
-export async function POST(req: NextRequest) {
-  const body = await req.json();
+export async function GET(req: NextRequest) {
 
-  const { timestamp, worker_id, workstation_id, event_type, confidence, count } = body;
+  const { searchParams } = new URL(req.url);
 
-  await pool.query(`
-    INSERT INTO events (timestamp, worker_id, workstation_id, event_type, confidence, count)
-    VALUES ($1,$2,$3,$4,$5,$6)
-    ON CONFLICT DO NOTHING
-  `, [timestamp, worker_id, workstation_id, event_type, confidence, count]);
+  const start = searchParams.get("start") || "2026-01-01";
+  const end = searchParams.get("end") || "2026-12-31";
 
-  return NextResponse.json({ message: "Event stored" });
+  const data = await getMetrics(start, end);
+
+  return NextResponse.json(data);
 }
