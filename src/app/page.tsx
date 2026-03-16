@@ -6,7 +6,7 @@ export default function Home() {
           AI Productivity Dashboard
         </h1>
 
-        <p className="text-gray-200 mb-9">
+        <p className="text-gray-200 mb-10">
           Monitor worker efficiency, activity time, and production metrics in real time.
         </p>
 
