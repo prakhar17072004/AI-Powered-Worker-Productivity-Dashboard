@@ -1,12 +1,12 @@
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-brfrom-blue-400 to-gray-700 px-6">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-brfrom-blue-200 to-gray-700 px-6">
       <div className="bg-white shadow-xl rounded-2xl p-8 text-center max-w-md w-full">
         <h1 className="text-3xl font-bold text-gray-700 mb-7">
           AI Productivity Dashboard
         </h1>
 
-        <p className="text-gray-600 mb-12">
+        <p className="text-gray-500 mb-12">
           Monitor worker efficiency, activity time, and production metrics in real time.
         </p>
 
