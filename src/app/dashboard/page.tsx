@@ -49,7 +49,7 @@ export default async function Dashboard() {
                 {w.worker_id}
               </h3>
 
-              <div className="space-y-2 text-gray-700">
+              <div className="space-y-2 text-gray-900">
                 <p>
                   <span className="font-medium">Active Time:</span>{" "}
                   {w.active_time} sec
