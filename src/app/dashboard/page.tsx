@@ -43,7 +43,7 @@ export default async function Dashboard() {
           {data.map((w) => (
             <div
               key={w.worker_id}
-              className="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition"
+              className="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition"
             >
               <h3 className="text-xl font-semibold text-blue-600 mb-4">
                 {w.worker_id}
